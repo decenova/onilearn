@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="64dp"
+    android:layout_height="104dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_centerInParent="true"
+    android:layout_marginHorizontal="10dp">
+
+    <!--<android.support.v7.widget.AppCompatImageView-->
+        <!--android:id="@+id/imgDefaultIcon"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="64dp"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--app:layout_constraintCircleRadius="64dp"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:srcCompat="@drawable/default_icon" />-->
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/imgSubjectIcon"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintCircleRadius="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSubjectName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Subject"
+        android:textSize="12dp"
+        android:maxLines="2"
+        android:ellipsize="marquee"
+        app:layout_constraintTop_toBottomOf="@+id/imgSubjectIcon" />
+</android.support.constraint.ConstraintLayout>

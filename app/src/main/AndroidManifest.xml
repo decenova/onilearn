@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.onilearnapp.onilearnapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/laucher_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity
+            android:name=".Activity.SplashScreen"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.SettingTaskActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="Add a task"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.SettingsActivity"
+            android:label="@string/title_activity_settings">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity" />
+        </activity>
+
+        <receiver
+            android:name=".Receiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".Service.RingToneService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".Activity.AlarmActivity"
+            android:showOnLockScreen="true" />
+        <activity
+            android:name=".Activity.SubjectActivity"
+            android:launchMode="singleTop"
+            android:showOnLockScreen="true" />
+        <activity
+            android:name=".Activity.QuestionTrueFalseActivity"
+            android:noHistory="true"
+            android:parentActivityName=".Activity.SubjectActivity"
+            android:showOnLockScreen="true" />
+        <activity
+            android:name=".Activity.MulQuestionActivity"
+            android:noHistory="true"
+            android:parentActivityName=".Activity.SubjectActivity"
+            android:showOnLockScreen="true" />
+        <activity
+            android:name=".Activity.SubjectChoiceActivity"
+            android:parentActivityName=".Activity.SettingTaskActivity" />
+        <activity
+            android:name=".Activity.AnswerActivity"
+            android:parentActivityName=".Activity.SubjectActivity" />
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.SignUpActivity"></activity>
+    </application>
+
+</manifest>
